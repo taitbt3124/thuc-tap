@@ -14,8 +14,10 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // Bỏ qua middleware 'auth' cho route home nếu cần
+        $this->middleware('auth')->except('index');  // Chỉ áp dụng middleware auth cho các route khác
     }
+
 
     /**
      * Show the application dashboard.
